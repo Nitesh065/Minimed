@@ -1,0 +1,116 @@
+.navbar{
+    overflow: hidden;
+    background-color: black;
+    font-family: sans-serif;
+    padding: 14px 20px;
+     
+}
+.navbar a{
+    float: left;
+    font-size: 18px;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+    text-decoration: none;
+}
+.dropdown{
+    float: left;
+    overflow: hidden;
+}
+.dropdown .dropbtn{
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: white;
+}
+    .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+}
+input[type=submit]{
+    margin: 0;
+    background: lawngreen;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+.dp{
+          margin: 0;
+    background: lawngreen;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: white;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+    input[type=file]{
+    margin: 0;
+    padding: 40px 40px;
+    background-color: white;
+    color: purple;
+    position: absolute;
+    top: 54%;
+    left:75%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+form.lf{
+    border: 3px solid gray;
+}
+input[type=text], input[type=Password]{
+    width: 50%;
+    padding: 8px 14px;
+    margin: 8px;
+    border: 1xp solid grey; 
+    box-sizing: border-box;
+    display: inline-block;
+
+}
+.button{
+    background-color: transparent;
+    color: green;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+.button:hover{
+    width:40%;
+    background-color: red;
+    
+}
+.container{
+    padding: 18px;
+    
+}
+.rbtn{
+    background-color: transparent;
+    color: green;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    width: 50%;      
+}
+.rbtn:hover{
+      width:50%;
+    background-color: black;
+}
+
+

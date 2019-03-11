@@ -15,8 +15,8 @@
                     <input type="text" name="email" placeholder="Enter Email" required> 
                     <label for="password">Password</label>
                     <input type="password" name="password" placeholder="Enter password" required> 
-                    <label for="Mobile" >Mobile</label>
-                    <input type="text" placeholder="Enter 10-digit-number" required> 
+                    <label for="Mobile">Mobile</label>
+                    <input type="number"placeholder="Enter 10-digit-number" required> 
                       <button type="submit" class="rbtn">Register</button>
               </pre>
           </div>

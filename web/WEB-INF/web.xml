@@ -20,6 +20,10 @@
         <servlet-name>Sampel</servlet-name>
         <servlet-class>Sampel</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ShowPriscription</servlet-name>
+        <servlet-class>mypkg.ShowPriscription</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Verify_User</servlet-name>
         <url-pattern>/Verify_User</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>Sampel</servlet-name>
         <url-pattern>/Sampel</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowPriscription</servlet-name>
+        <url-pattern>/ShowPriscription</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,3 +1,6 @@
+body{
+    background-color: teal;
+}
 .navbar{
     overflow: hidden;
     background-color: black;
@@ -14,10 +17,12 @@
     text-decoration: none;
 }
 .dropdown{
+    display: block;
     float: left;
     overflow: hidden;
 }
 .dropdown .dropbtn{
+    display: block;
     font-size: 18px;
     border: none;
     outline: none;
@@ -34,7 +39,7 @@
 }
 
 .dropdown:hover .dropdown-content{
-    display: block;
+    display: inherit;
 }
 input[type=submit]{
     margin: 0;

@@ -16,7 +16,7 @@ public class Data_Save extends HttpServlet {
     public void init() {
         try {
             con = mypkg.Dbase.connect();
-            String qr = "insert into User values(?,?,?,?,?)";
+            String qr = "insert into Buyer values(?,?,?,?,?)";
             ps = con.prepareStatement(qr);
         } catch (Exception e) {
         }
@@ -37,7 +37,7 @@ public class Data_Save extends HttpServlet {
         String Username = request.getParameter("username");
         String Email = request.getParameter("email");
         String Password = request.getParameter("password");
-        String Mobile = request.getParameter("Mobile");
+        String Mobile = request.getParameter("mobile");
         try {
             ps.setString(1,User_id);
             ps.setString(2,Username);
@@ -45,7 +45,7 @@ public class Data_Save extends HttpServlet {
             ps.setString(4,Password);
             ps.setString(5,Mobile);
             ps.executeUpdate();
-            out.println("Registerd Seccessfully");
+            out.println("<h3>Registerd Seccessfully</h3>");
             out.println("<a href=Login.jsp>Login now</a>");
         } catch (Exception e) {
             out.println(e);

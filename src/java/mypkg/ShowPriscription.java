@@ -7,35 +7,52 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-public class ViewPrescription extends HttpServlet {
+public class ShowPriscription extends HttpServlet {
 
  
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String id=request.getParameter("id");
-        
+        PrintWriter out=response.getWriter();
+         String id=request.getParameter("id");
         try{
-              String qr="select img from Image1 where imgid=?";
-           Connection con=mypkg.Dbase.connect();
-           PreparedStatement ps= con.prepareStatement(qr);
-           ps.setInt(1,Integer.parseInt(id));
-           ResultSet rs=ps.executeQuery();
-           rs.next();
-           byte b[]=rs.getBytes(1);
-            ServletOutputStream out=response.getOutputStream();
-            out.write(b);
-            out.close();
-            con.close();
+            Connection con=Dbase.connect();
+            String qr="select*from Image1";
+            PreparedStatement ps=con.prepareStatement(qr);
+              ps.setInt(1,Integer.parseInt(id));
+            ResultSet rs=ps.executeQuery();
+        out.println("<html>");
+         out.println("<body>");
+         out.println("<table broder=2");
+        while(rs.next()){
+            String s1=rs.getString(1);
+            String s2=rs.getString(2);
+            out.println("<tr>");
+            out.println("<tr>");
+            out.println("<td>Prescription</td>");
+           out.println("<td> <img width=800 height=500 src=\"ViewPrescription?id=5001\"></td>");
+            out.println("</tr>");
+             out.println("<tr>");
+              out.println("<td>Date</td>");
+               out.println("<td>"+s1+"</td>");
+               out.println("</tr>");
+               out.println("<tr>");
+                out.println("<td>id</td>");
+                out.println("<td>"+s2+"</td>");
+                     out.println("</tr>");
+                     out.println("</tr>");
+          
+        }
+             out.println("</table>");
+             out.println("</body>");
+              out.println("</html>");
         }
         catch(Exception e){
-           
         }
         
     }

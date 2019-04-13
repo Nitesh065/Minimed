@@ -24,6 +24,50 @@
         <servlet-name>ShowPriscription</servlet-name>
         <servlet-class>mypkg.ShowPriscription</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SaveProduct</servlet-name>
+        <servlet-class>mypkg.SaveProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Save_Product</servlet-name>
+        <servlet-class>mypkg.Save_Product</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewProduct</servlet-name>
+        <servlet-class>mypkg.ViewProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ViewProducts</servlet-name>
+        <servlet-class>mypkg.ViewProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowProducts</servlet-name>
+        <servlet-class>mypkg.ShowProducts</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveProducts</servlet-name>
+        <servlet-class>mypkg.RemovePrescription</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemoveProduct</servlet-name>
+        <servlet-class>mypkg.RemoveProduct</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PrescriptionRemove</servlet-name>
+        <servlet-class>mypkg.PrescriptionRemove</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>mypkg.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Verify_User1</servlet-name>
+        <servlet-class>Verify_User1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>StoreProduct</servlet-name>
+        <servlet-class>mypkg.StoreProduct</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Verify_User</servlet-name>
         <url-pattern>/Verify_User</url-pattern>
@@ -47,6 +91,50 @@
     <servlet-mapping>
         <servlet-name>ShowPriscription</servlet-name>
         <url-pattern>/ShowPriscription</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SaveProduct</servlet-name>
+        <url-pattern>/SaveProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Save_Product</servlet-name>
+        <url-pattern>/Save_Product</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewProduct</servlet-name>
+        <url-pattern>/ViewProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewProducts</servlet-name>
+        <url-pattern>/ViewProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowProducts</servlet-name>
+        <url-pattern>/ShowProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveProducts</servlet-name>
+        <url-pattern>/RemoveProducts</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveProduct</servlet-name>
+        <url-pattern>/RemoveProduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PrescriptionRemove</servlet-name>
+        <url-pattern>/PrescriptionRemove</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Verify_User1</servlet-name>
+        <url-pattern>/Verify_User1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StoreProduct</servlet-name>
+        <url-pattern>/StoreProduct</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

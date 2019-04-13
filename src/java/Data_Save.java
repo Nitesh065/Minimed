@@ -37,7 +37,8 @@ public class Data_Save extends HttpServlet {
         String Username = request.getParameter("username");
         String Email = request.getParameter("email");
         String Password = request.getParameter("password");
-        String Mobile = request.getParameter("mobile");
+        String Mobile = request.getParameter("Mobile_no");
+        
         try {
             ps.setString(1,User_id);
             ps.setString(2,Username);

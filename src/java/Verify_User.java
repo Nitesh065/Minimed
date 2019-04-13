@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class Verify_User extends HttpServlet {
     Connection con;
@@ -16,7 +17,7 @@ public class Verify_User extends HttpServlet {
       public void init(){
           try{
               con=mypkg.Dbase.connect();
-              String qr="SELECT username FROM `User` WHERE username=?AND Password=?";
+              String qr="SELECT username FROM `Buyer` WHERE username=? AND Password=?";
               ps=con.prepareStatement(qr);
           }
           catch(Exception e){
@@ -35,9 +36,12 @@ public class Verify_User extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out=response.getWriter();
+        String buyerSession;String buyerS;
+       
         String s1=request.getParameter("username");
         String s2=request.getParameter("Password");
         String s3=request.getParameter("utype");
+        out.println(s3);
         if(s3.equalsIgnoreCase("Admin")){
             if(s1.equals("admin") && s2.equals("minimed")){
                 response.sendRedirect("admin.jsp");
@@ -50,10 +54,11 @@ public class Verify_User extends HttpServlet {
             try{
                 ps.setString(1,s1);
                 ps.setString(2,s2);
+                //HttpSession session = request.getSession();
                 ResultSet rs=ps.executeQuery();
                 boolean b=rs.next();
                 if(b){
-                    response.sendRedirect("buyer.jsp");
+                    response.sendRedirect("Priscription.jsp");
                 }
                 else{
                     out.println("Invalid User");

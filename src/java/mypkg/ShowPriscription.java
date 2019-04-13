@@ -1,4 +1,3 @@
-
 package mypkg;
 
 import java.io.IOException;
@@ -11,50 +10,58 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 public class ShowPriscription extends HttpServlet {
 
- 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out=response.getWriter();
-         String id=request.getParameter("id");
-        try{
-            Connection con=Dbase.connect();
-            String qr="select*from Image1";
-            PreparedStatement ps=con.prepareStatement(qr);
-              ps.setInt(1,Integer.parseInt(id));
-            ResultSet rs=ps.executeQuery();
-        out.println("<html>");
-         out.println("<body>");
-         out.println("<table broder=2");
-        while(rs.next()){
-            String s1=rs.getString(1);
-            String s2=rs.getString(2);
-            out.println("<tr>");
-            out.println("<tr>");
-            out.println("<td>Prescription</td>");
-           out.println("<td> <img width=800 height=500 src=\"ViewPrescription?id=5001\"></td>");
-            out.println("</tr>");
-             out.println("<tr>");
-              out.println("<td>Date</td>");
-               out.println("<td>"+s1+"</td>");
-               out.println("</tr>");
-               out.println("<tr>");
+        PrintWriter out = response.getWriter();
+        //String imgid=request.getParameter("imgid");
+        try {
+            Connection con = Dbase.connect();
+            String qr = "select*from Image1";
+            PreparedStatement ps = con.prepareStatement(qr);
+            ResultSet rs = ps.executeQuery();
+            out.println("<html>");
+            out.println("<body>");
+            out.println("<hr>");
+            out.println("<table broder=2");
+            while (rs.next()) {
+                String s1 = rs.getString(2);
+                String s2 = rs.getString(3);
+                String s3 = rs.getString(4);
+                String s4 = rs.getString    (5);
+
+                out.println("<tr>");
+                out.println("<tr>");
+                out.println("<td>Prescription</td>");
+                out.println("<td> <img width=500 height=800 src=\"ViewPrescription?id=" + s2 + "\"></td>");
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<hr>");
+                out.println("<td>Date</td>");
+                out.println("<td>" + s1 + "</td>");
+                out.println("</tr>");
+                out.println("<tr>");
                 out.println("<td>id</td>");
-                out.println("<td>"+s2+"</td>");
-                     out.println("</tr>");
-                     out.println("</tr>");
-          
+                out.println("<td>" + s2 + "</td>");
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>Address</td>");
+                out.println("<td>" + s3 + "</td>");
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>Mobile</td>");
+                out.println("<td>" + s4 + "</td>");
+                out.println("</tr>");
+                out.println("</tr>");
+            }
+            out.println("</table>");
+            out.println("</body>");
+            out.println("</html>");
+        } catch (Exception e) {
         }
-             out.println("</table>");
-             out.println("</body>");
-              out.println("</html>");
-        }
-        catch(Exception e){
-        }
-        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

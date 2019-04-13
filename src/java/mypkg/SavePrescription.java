@@ -29,21 +29,32 @@ public class SavePrescription extends HttpServlet  {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out=response.getWriter();
-        
+        String Address="", Mobile="";
            byte imgdata[]=null;
            DiskFileItemFactory factory=new DiskFileItemFactory();
-        ServletFileUpload upload=new ServletFileUpload(factory);
+           ServletFileUpload upload=new ServletFileUpload(factory);
         try{
         List<FileItem> items=upload.parseRequest(new ServletRequestContext(request));
               for(FileItem item:items){
+                  
             String name=item.getFieldName();
-            if(name.equals("img"))
-           imgdata=item.get();
+            out.println(name);
+            if(name.equals("Address"))
+            {
+                Address=item.getString();
+            }
+            else if(name.equals("Mobile")){
+           Mobile=item.getString();
+            }
+            else if(name.equals("img")){
+                imgdata=item.get();
+            }
     }
         }
         catch(Exception e){
             out.println(e);
         }
+        
            java.util.Date dt=new java.util.Date();
           long ts=dt.getTime();
           java.sql.Date postDate=new java.sql.Date(ts);
@@ -57,23 +68,26 @@ public class SavePrescription extends HttpServlet  {
           if(lastId!=0){
               newId=lastId+1;
           }
-          PreparedStatement ps1=con.prepareStatement("insert into Image1 values(?,?,?)");
+          PreparedStatement ps1=con.prepareStatement("insert into Image1 values(?,?,?,?,?)");      
           ps1.setBytes(1, imgdata);
           ps1.setDate(2, postDate);
           ps1.setInt(3, newId);
+          ps1.setString(4, Address);
+          ps1.setString(5,Mobile);
           ps1.executeUpdate();
           out.println("<html>");
           out.println("<body>");
-          out.println("<h3>Uploded</h3>");
+          out.println("<h3>Your Prescription Has Uploded</h3>");
+          out.println("<p>We will contact you whithin 24hrs for further details of your medicine<p>");
           out.println("<body>");
           out.println("</html>");
           
           }
           catch(Exception e){
               out.println(e);
-          }
+          
     }
-        
+    }
     
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
